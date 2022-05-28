@@ -54,7 +54,7 @@ async function update(id, userParam) {
 
     // validate
     if (!question) throw 'Cuestionario no encontrado';
-    if (question.name !== userParam.username && await Questions.findOne({ name: userParam.name })) {
+    if (question.name !== userParam.name && await Questions.findOne({ name: userParam.name })) {
         throw 'El cuestionario "' + userParam.name + '" ya existe';
     }
 
